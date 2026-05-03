@@ -204,71 +204,16 @@ Or add `prisma db push` to your build command in `vercel.json` (already configur
 ## 📁 Project Structure
 
 ```
-lifeos/
-├── app/
-│   ├── (app)/                    # Protected app routes (requires auth)
-│   │   ├── layout.tsx            # App shell with sidebar + topbar
-│   │   ├── dashboard/
-│   │   │   ├── page.tsx          # Dashboard server component
-│   │   │   └── DashboardClient.tsx
-│   │   ├── planner/page.tsx      # AI Planner
-│   │   ├── tasks/page.tsx        # Tasks & Goals (Kanban/List)
-│   │   ├── chat/page.tsx         # AI Chat Assistant
-│   │   ├── notes/page.tsx        # Notes + AI Summarizer
-│   │   ├── habits/page.tsx       # Habit Tracker
-│   │   ├── analytics/page.tsx    # Analytics & Charts
-│   │   ├── simulator/page.tsx    # Future Simulator
-│   │   └── settings/page.tsx     # Settings
-│   ├── api/
-│   │   ├── tasks/route.ts        # Tasks CRUD
-│   │   ├── tasks/[id]/route.ts
-│   │   ├── habits/route.ts       # Habits CRUD
-│   │   ├── habits/log/route.ts   # Habit logging
-│   │   ├── habits/log/[id]/route.ts
-│   │   ├── notes/route.ts        # Notes CRUD
-│   │   ├── notes/[id]/route.ts
-│   │   ├── notes/[id]/summarize/route.ts  # AI summarization
-│   │   ├── chat/route.ts         # AI chat (streaming)
-│   │   ├── planner/generate/route.ts      # AI schedule generation
-│   │   ├── simulator/route.ts    # Future simulator
-│   │   ├── dashboard/summary/route.ts     # AI daily briefing
-│   │   └── analytics/route.ts    # Analytics data
-│   ├── sign-in/[[...sign-in]]/page.tsx
-│   ├── sign-up/[[...sign-up]]/page.tsx
-│   ├── layout.tsx                # Root layout (Clerk, fonts, Toaster)
-│   └── page.tsx                  # Landing page
-├── components/
-│   ├── layout/
-│   │   ├── Sidebar.tsx           # Collapsible glass sidebar
-│   │   └── TopBar.tsx            # Top navigation bar
-│   └── dashboard/
-│       ├── AIDailySummary.tsx    # Streaming AI briefing widget
-│       ├── ScoreRing.tsx         # Animated SVG score ring
-│       └── QuickAddTask.tsx      # Modal task creation
-├── lib/
-│   ├── ai.ts                     # Claude/OpenAI provider + system prompts
-│   ├── db.ts                     # Prisma client singleton
-│   ├── auth.ts                   # Auth helpers (getDbUser, requireAuth)
-│   └── utils.ts                  # cn(), formatDate(), etc.
-├── hooks/
-│   ├── useTheme.ts               # Dark/light mode toggle
-│   └── useTasks.ts               # Task CRUD hook
-├── types/
-│   └── index.ts                  # Shared TypeScript types
-├── prisma/
-│   ├── schema.prisma             # Full database schema
-│   └── seed.ts                   # Demo data seeder
-├── styles/
-│   └── globals.css               # Global styles + glass design system
-├── public/                       # Static assets
-├── middleware.ts                  # Clerk auth middleware
-├── next.config.js
-├── tailwind.config.ts
-├── tsconfig.json
-├── vercel.json                   # Vercel deployment config
-├── .env.example                  # Environment variables template
-├── .gitignore
-└── package.json
+lifeos-web/
+├── index.html
+├── css/
+│   └── style.css
+├── js/
+│   └── app.js
+├── assets/
+│   ├── icons/
+│   └── images/
+└── README.mds
 ```
 
 ---
